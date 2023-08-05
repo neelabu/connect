@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: rgb(0, 0, 0);
+            background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(27, 93, 65, 1) 48%, rgba(11, 87, 103, 1) 79%);
+            background-size: cover;
+        }
+
+        .logo {
+            font-size: 1.80rem;
+            font-family: fantasy;
+            padding-right: 80px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo a {
+            padding-left: 20px;
+        }
+
+        .navbar {
+            background-color: transparent !important;
+            position: relative;
+        }
+
+        .navbar-brand {
+            color: white;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+        }
+
+
+        .content {
+            padding-top: 200px;
+
+            text-align: left;
+            color: white;
+        }
+
+        .left-column {
+            padding-top: 160px;
+            padding-left: 30px;
+            font-size: 15px;
+            color: white;
+            word-spacing: 2px;
+            text-align: justify;
+            line-height: 30px;
+        }
+
+        .right-column {
+
+            padding-top: 170px;
+            padding-left: 50px;
+        }
+
+        .form-input {
+            background-color: transparent;
+        }
+
+        .form-input::placeholder {
+            color: white;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            padding-top: 35px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .footer-content {
+            text-align: justify;
+            padding: 30px;
+        }
+
+        .service a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .register {
+            text-align: center;
+            color: white;
+        }
+    </style>
+    <title>Connect</title>
+
+</head>
+
+<body>
+    {% load static %}
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+
+            <a class="navbar-brand logo" href="#">
+
+                Connect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./login"> <i class="bi bi-person-circle "> Login</i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="container"><br>
+            <h1>Connect with talent</h1>
+            <p style="font-size: 20px;">Acquiring right talent is the most importent key to growth.<br>
+                Hiring was- and still is- the most importent thing we do.<br>
+                Join us to connect with the people you want</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 left-column">
+
+                <p>Welcome to our premier recruitment agency where talent meets opportunity. With a proven track record
+                    of connecting top-tier professionals to leading organizations, we are your gateway to success. Our
+                    expert team specializes in identifying the perfect match for both job seekers and employers,
+                    ensuring a seamless and rewarding hiring experience. Leveraging cutting-edge technology and industry
+                    insights, we streamline the recruitment process, making it efficient, effective, and tailored to
+                    your needs. Join us today to embark on a journey of unparalleled growth and achievement.</p>
+            </div>
+            <div class="col-md-8 right-column">
+               
+                    <h2 class="register " id="register">Register now!</h2><br>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control  form-input" placeholder="First name"
+                                aria-label="First name" name="fname">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control form-input" placeholder="Last name"
+                                aria-label="Last name" name="lname">
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="row">
+                        <div class="col">
+                            <input type="email" class="form-control form-input" placeholder="Email" aria-label="Email"
+                                name="email">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control form-input" placeholder="Company"
+                                aria-label="Company" name="company">
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="row">
+                        <div class="col">
+                            <input type="number" class="form-control form-input" placeholder="Phone number"
+                                aria-label="Phone" name="phone">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control form-input" placeholder="Job title"
+                                aria-label="Job title" name="job">
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="row">
+                        <div class="col">
+                            <input type="password" class="form-control form-input" placeholder="Create password"
+                                aria-label="password" name="pswd">
+                        </div>
+
+                    </div>
+                    <br><br>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-danger" type="submit">Submit</button>
+                    </div>
+                    <br><br>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row footer-content">
+                <div class="col-md-3 ">
+                    <a class="logo" href="#">
+                        Connect
+                    </a>
+                    <br><br>
+                    <p>
+
+                        Info@mysite.com<br>
+
+                        500 Terry Francine St <br>
+
+                        San Francisco, CA 94158<br>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="service">
+                        <a href="#">About</a>
+                        <br><br>
+                        <a href="#">Jobs</a>
+                        <br><br>
+                        <a href="login.html">Login</a>
+                        <br><br>
+                        <a href="#register">Register</a>
+
+                    </p>
+
+
+                </div>
+                <div class="col-md-3 ">
+                    <h3>Contact</h3><br>
+                    <p class="contact">Email: <a href="mailto:contact@example.com">contact@example.com</a></p><br>
+                    <p>Phone: +1234567890</p>
+
+                </div>
+                <div class="col-md-3">
+                    <h3>Follow us on</h3><br>
+                    <a style="padding: 15px;" href=""><i class="bi bi-facebook"></i></a>
+                    <a style="padding: 15px;" href=""><i class="bi bi-twitter"></i></a>
+                    <a style="padding: 15px;" href=""><i class="bi bi-instagram"></i></a>
+
+                </div>
+            </div>
+            <p>&copy; 2023 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
